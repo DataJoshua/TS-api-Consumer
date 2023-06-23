@@ -11,3 +11,7 @@ export interface ButtonProps {
   isDisabled? : (boolean | string | null)
   handleOnClick? : MouseEventHandler<HTMLButtonElement>
 }
+
+export interface ImageProps {
+  url : string
+}

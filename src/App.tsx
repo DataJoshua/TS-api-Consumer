@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/home';
 import ApiContextProvider from './context/ApiContextProvider';
 import Nav from './templates/Nav';
+import Characters from './pages/Characters';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <Nav />
         <ApiContextProvider>
           <Routes>
-            <Route path="/" element={<Home/>}/>
+            <Route path="/characters" element={<Characters/>}/>
           </Routes>
         </ApiContextProvider>
     </BrowserRouter>

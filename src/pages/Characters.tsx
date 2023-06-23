@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import Button from "../atoms/Button";
 import ApiContext from "../context/ApiContext";
-import { ApiContextType, Character } from "../types/ApiContextTypes";
+import { ApiContextType } from "../types/ApiContextTypes";
 import CardsContainer from "../templates/CardsContainer";
 import Card from "../organisms/Card";
 import PaginationButtonsContainer from "../templates/PaginationButtonsContainer";
 
-const Home = () => {
+const Characters = () => {
   
   const { results, info , setUrl } = useContext(ApiContext) as ApiContextType;
   const [page, setPage] = useState<number>(1);
@@ -38,4 +38,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Characters;
