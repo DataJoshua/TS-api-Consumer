@@ -5,7 +5,7 @@ import { Character } from "../types/ApiContextTypes";
 
 const ApiContextProvider = ({ children } : ApiContextProps) => {
 
-  const [data, setData] = useState();
+  const [data, setData] = useState<Character[] | []>([]);
 
   const makeCall : Function = async () =>  {
     let res = await fetch("https://rickandmortyapi.com/api/character", {
@@ -13,7 +13,9 @@ const ApiContextProvider = ({ children } : ApiContextProps) => {
     });
 
     let dataResponse = await res.json();
-    setData(dataResponse.results);
+    let dataArray = dataResponse.results as Character[];
+
+    setData(dataArray);
   }
   
 

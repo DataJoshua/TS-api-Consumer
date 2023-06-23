@@ -4,8 +4,3 @@ export interface Character {
   species : string
   gender : string
 }
-
-
-export interface ApiContextType {
-  results:  Character[]
-}

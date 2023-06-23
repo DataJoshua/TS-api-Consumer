@@ -1,6 +1,6 @@
 import { createContext } from "react";
-import { ApiContextType } from "../types/ApiContextTypes";
+import { Character } from "../types/ApiContextTypes";
 
-const ApiContext = createContext<any>(null);
+const ApiContext = createContext<Character [] | []>([]);
 
 export default ApiContext;
