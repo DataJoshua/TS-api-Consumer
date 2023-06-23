@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { ApiContextProps } from "../types/types";
 import ApiContext from "./ApiContext";
-import { Character, Info } from "../types/ApiContextTypes";
+import { ApiContextProps, Character, Info } from "../types/ApiContextTypes";
 
 const ApiContextProvider = ({ children } : ApiContextProps) => {
 
