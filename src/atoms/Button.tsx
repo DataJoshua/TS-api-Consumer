@@ -1,4 +1,4 @@
-import { ButtonProps } from "../types/types";
+import { ButtonProps } from "../types/AtomTypes";
 
 
 const Button = ({ label, handleOnClick}: ButtonProps) => {  

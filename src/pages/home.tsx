@@ -1,20 +1,27 @@
 import { useContext } from "react";
 import Button from "../atoms/Button";
 import ApiContext from "../context/ApiContext";
-import { Character } from "../types/ApiContextTypes";
+import { ApiContextType, Character } from "../types/ApiContextTypes";
+import CardsContainer from "../templates/CardsContainer";
+import Card from "../organisms/Card";
 
 const Home = () => {
   
-  const data = useContext(ApiContext) as Character[];
+  const { results, info, setUrl } = useContext(ApiContext) as ApiContextType;
 
-  const handleOnClick = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) :void  =>  {
+  const handleOnClick = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) =>  {
     console.log("hello world");
+    console.log(info);
+    
   }
 
   return (
     <>
       <div>
-        <Button label="Click" handleOnClick={handleOnClick}></Button>
+        <CardsContainer>
+          {results?.map(val => <Card character={val}/>)}
+        </CardsContainer>
+        <Button label="click to change link" handleOnClick={handleOnClick}></Button>
       </div>
     </>
   )

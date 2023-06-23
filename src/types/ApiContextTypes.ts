@@ -4,3 +4,16 @@ export interface Character {
   species : string
   gender : string
 }
+
+export interface Info {
+  count: number
+  pages: number
+  next: (string | null)
+  prev: (string | null) 
+}
+
+export interface ApiContextType {
+  results : (Character [] | null)
+  info : (Info | {})
+  setUrl :  Function
+}
