@@ -14,6 +14,6 @@ export interface Info {
 
 export interface ApiContextType {
   results : (Character [] | null)
-  info : (Info | {})
+  info : (Info | null)
   setUrl :  Function
 }

@@ -6,7 +6,7 @@ import { Character, Info } from "../types/ApiContextTypes";
 const ApiContextProvider = ({ children } : ApiContextProps) => {
 
   const [data, setData] = useState<Character[] | []>([]);
-  const [information, setInformation] = useState<Info | {}>({});
+  const [information, setInformation] = useState<Info | null>(null);
   const [url, setUrl] = useState<string>("https://rickandmortyapi.com/api/character");
 
   const makeCall : Function = async () =>  {

@@ -7,12 +7,11 @@ import Card from "../organisms/Card";
 
 const Home = () => {
   
-  const { results, info, setUrl } = useContext(ApiContext) as ApiContextType;
+  const { results, info , setUrl } = useContext(ApiContext) as ApiContextType;
 
   const handleOnClick = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) =>  {
     console.log("hello world");
-    console.log(info);
-    
+    setUrl(info?.next)
   }
 
   return (
