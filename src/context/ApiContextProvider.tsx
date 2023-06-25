@@ -4,9 +4,9 @@ import { ApiContextProps, Character, Info } from "../types/ApiContextTypes";
 
 const ApiContextProvider = ({ children } : ApiContextProps) => {
 
-  const [data, setData] = useState<Character[] | []>([]);
+  const [data, setData] = useState<Object[] | []>([]);
   const [information, setInformation] = useState<Info | null>(null);
-  const [url, setUrl] = useState<string>("https://rickandmortyapi.com/api/character");
+  const [url, setUrl] = useState<string>("");
 
   const makeCall : Function = async () =>  {
     let res = await fetch(url, {
@@ -14,7 +14,7 @@ const ApiContextProvider = ({ children } : ApiContextProps) => {
     });
 
     let dataResponse = await res.json();
-    let dataArray = dataResponse.results as Character[];
+    let dataArray = dataResponse.results as Object[];
     let information = dataResponse.info as Info;
 
     setInformation(information)
@@ -23,7 +23,7 @@ const ApiContextProvider = ({ children } : ApiContextProps) => {
   
 
   useEffect(()=>{
-    makeCall();
+    if(url != "") makeCall();
   }, [url])
 
 

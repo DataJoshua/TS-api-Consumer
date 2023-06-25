@@ -9,6 +9,13 @@ export interface Character {
   image : string
 }
 
+export interface Location {
+  id : number
+  name : string
+  type : string
+  dimension : string
+}
+
 export interface Info {
   count: number
   pages: number
@@ -17,7 +24,7 @@ export interface Info {
 }
 
 export interface ApiContextType {
-  results : (Character [] | null)
+  results :  Object []
   info : (Info | null)
   setUrl :  Function
 }

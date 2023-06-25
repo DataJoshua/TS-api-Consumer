@@ -1,14 +1,20 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "../atoms/Button";
 import ApiContext from "../context/ApiContext";
-import { ApiContextType } from "../types/ApiContextTypes";
+import { ApiContextType, Character } from "../types/ApiContextTypes";
 import CardsContainer from "../templates/CardsContainer";
 import Card from "../organisms/Card";
 import PaginationButtonsContainer from "../templates/PaginationButtonsContainer";
+import Pagination from "../molecules/Pagination";
 
 const Characters = () => {
   
+  useEffect(()=>{
+    setUrl("https://rickandmortyapi.com/api/character")
+  }, [])
+
   const { results, info , setUrl } = useContext(ApiContext) as ApiContextType;
+
   const [page, setPage] = useState<number>(1);
 
   const handleOnPrev = ()=> {
@@ -26,13 +32,9 @@ const Characters = () => {
     <>
       <div className="px-[100px]">
         <CardsContainer>
-          {results?.map(val => <Card character={val}/>)}
+          {results?.map(val => <Card character={val as Character}/>)}
         </CardsContainer>
-        <PaginationButtonsContainer>
-          <Button label="prev" isDisabled={info?.prev} handleOnClick={handleOnPrev}></Button>
-          <h1>Page number {page}</h1>
-          <Button label="next" isDisabled={info?.next} handleOnClick={handleOnNext}></Button>  
-        </PaginationButtonsContainer>
+        <Pagination page={page} info={info} handleOnNext={handleOnNext} handleOnPrev={handleOnPrev} />
       </div>
     </>
   )
