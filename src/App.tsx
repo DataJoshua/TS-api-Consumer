@@ -4,6 +4,7 @@ import ApiContextProvider from './context/ApiContextProvider';
 import Nav from './templates/Nav';
 import Characters from './pages/Characters';
 import Locations from './pages/Locations';
+import Episodes from './pages/Episodes';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/characters" element={<Characters/>}/>
             <Route path="/locations" element={<Locations/>}></Route>
+            <Route path="/episodes" element={<Episodes/>}></Route>
           </Routes>
         </ApiContextProvider>
     </BrowserRouter>

@@ -16,6 +16,13 @@ export interface Location {
   dimension : string
 }
 
+export interface Episode {
+  id : number
+  name :string
+  air_date : string
+  episode: string
+}
+
 export interface Info {
   count: number
   pages: number
