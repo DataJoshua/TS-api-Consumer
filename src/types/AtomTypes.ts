@@ -10,6 +10,7 @@ export interface ButtonProps {
   label : string
   isDisabled? : (boolean | string | null)
   handleOnClick? : MouseEventHandler<HTMLButtonElement>
+  styles? : string
 }
 
 export interface ImageProps {

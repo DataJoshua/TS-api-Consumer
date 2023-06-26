@@ -1,8 +1,20 @@
-import CardsContainer from "../templates/CardsContainer";
 import { EpisodeCardPros } from "../types/OrganismsTypes";
+import { useEffect, useState } from "react";
 
-const EpisodeCard = ({ episode : { name, air_date, episode } } : EpisodeCardPros) => {
+const EpisodeCard = ({ episode : { name, air_date, episode, characters } } : EpisodeCardPros) => {
 
+  const [charactersList, setCharactersList] = useState<string[] | null | []>([]);
+
+  useEffect(() => {
+    const charactersList = characters?.map(val => {
+      let arr = val.split("/");
+      let last = arr.length - 1;
+      return val.split("/")[last]
+    });
+
+    setCharactersList(charactersList);
+  }, [])
+  
   return (
   <>
     <div className="p-5 rounded-lg shadow-lg hover:shadow-xl transition">
