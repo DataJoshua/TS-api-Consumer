@@ -6,6 +6,7 @@ import Characters from './pages/Characters';
 import Locations from './pages/Locations';
 import Episodes from './pages/Episodes';
 import EpisodePage from './pages/EpisodePage';
+import LocationPage from './pages/LocationPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/locations" element={<Locations/>}></Route>
             <Route path="/episodes" element={<Episodes/>}></Route>
             <Route path="/episodes/:id" element={<EpisodePage/>}></Route>
+            <Route path="/locations/:id" element={<LocationPage/>}></Route>
           </Routes>
         </ApiContextProvider>
     </BrowserRouter>
