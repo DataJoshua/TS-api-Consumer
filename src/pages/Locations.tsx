@@ -33,7 +33,6 @@ const Locations = () => {
     setValue(val);
   }
 
-  
   return (
     <>
       <div className="px-[60px]">
@@ -52,6 +51,5 @@ const Locations = () => {
     </>
   );
 }
-
 
 export default Locations;

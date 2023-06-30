@@ -1,0 +1,22 @@
+.animate-loading {
+  animation-name: morph;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes morph {
+  0% {
+    transform: rotate(0deg);
+    border-radius: 70%;
+  }
+  50%{
+    background-color: indigo;
+  }
+  100% {
+    transform: rotate(180deg);
+    border-radius: 20%;
+  }
+}

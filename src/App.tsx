@@ -5,6 +5,7 @@ import Nav from './templates/Nav';
 import Characters from './pages/Characters';
 import Locations from './pages/Locations';
 import Episodes from './pages/Episodes';
+import EpisodePage from './pages/EpisodePage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/characters" element={<Characters/>}/>
             <Route path="/locations" element={<Locations/>}></Route>
             <Route path="/episodes" element={<Episodes/>}></Route>
+            <Route path="/episodes/:id" element={<EpisodePage/>}></Route>
           </Routes>
         </ApiContextProvider>
     </BrowserRouter>

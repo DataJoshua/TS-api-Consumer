@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ApiContext from "./ApiContext";
-import { ApiContextProps, Character, Info } from "../types/ApiContextTypes";
+import { ApiContextProps, Info } from "../types/ApiContextTypes";
+import axios from "axios";
 
 const ApiContextProvider = ({ children } : ApiContextProps) => {
 
@@ -9,11 +10,9 @@ const ApiContextProvider = ({ children } : ApiContextProps) => {
   const [url, setUrl] = useState<string>("");
 
   const makeCall : Function = async () =>  {
-    let res = await fetch(url, {
-      method: "GET"
-    });
+    let res = await axios.get(url);
 
-    let dataResponse = await res.json();
+    let dataResponse = res.data;
     let dataArray = dataResponse.results as Object[];
     let information = dataResponse.info as Info;
 
