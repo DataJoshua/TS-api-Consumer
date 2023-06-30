@@ -8,7 +8,7 @@ const LocationCard = ( { location : { id, name, type, dimension } } : LocationCa
   const handleOnClick = () => navigate(`/locations/${id}`);
 
   return (
-    <div onClick={handleOnClick} className="p-5 rounded-lg shadow-lg hover:shadow-xl transition">
+    <div onClick={handleOnClick} className="p-5 rounded-lg shadow-lg hover:shadow-xl transition hover:cursor-pointer">
       <div className="mt-[10px]">
         <h1 className="font-bold">{name}</h1>
         <p>Type: {type}</p>

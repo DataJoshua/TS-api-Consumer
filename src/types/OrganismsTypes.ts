@@ -19,3 +19,7 @@ export interface EpisodeDisplatProps {
 export interface LocationDisplatProps {
   location : Location
 }
+
+export interface CharacterDisplayProps {
+  character : Character
+}
