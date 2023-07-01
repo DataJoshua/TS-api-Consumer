@@ -1,3 +1,4 @@
+import React from "react";
 import { Info } from "./ApiContextTypes";
 
 export interface PaginationPros {
@@ -5,4 +6,9 @@ export interface PaginationPros {
   page : number
   handleOnPrev : Function
   handleOnNext :  Function
+}
+
+export interface SearchBoxProps {
+  inputValue : React.Ref<HTMLInputElement>
+  handleOnSearch : Function
 }
