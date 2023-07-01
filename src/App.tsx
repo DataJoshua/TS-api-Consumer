@@ -5,6 +5,7 @@ import Nav from './templates/Nav';
 import Characters from './pages/Characters';
 import Locations from './pages/Locations';
 import Episodes from './pages/Episodes';
+import Home from './pages/Home';
 import EpisodePage from './pages/EpisodePage';
 import LocationPage from './pages/LocationPage';
 import CharacterPage from './pages/CharacterPage';
