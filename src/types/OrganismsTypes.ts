@@ -11,3 +11,15 @@ export interface LocationCardProps {
 export interface EpisodeCardPros {
   episode : Episode
 }
+
+export interface EpisodeDisplatProps {
+  episode : Episode;
+}
+
+export interface LocationDisplatProps {
+  location : Location
+}
+
+export interface CharacterDisplayProps {
+  character : Character
+}

@@ -45,7 +45,7 @@ const Episodes = () => {
           const episodeName = episode.name.toLowerCase();
 
           return episodeName.includes(filterValue);
-        }).map(val => <EpisodeCard episode={val as Episode}/>)}
+        }).map(val => <EpisodeCard key={(val as Episode).id} episode={val as Episode}/>)}
       </CardsContainer>
       <Pagination info={info} page={page} handleOnPrev={handleOnPrev} handleOnNext={handleOnNext} />
     </div>
