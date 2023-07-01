@@ -4,7 +4,7 @@ import { Character } from "../types/ApiContextTypes";
 
 const useQuery = ( urls : string [] ) => {
 
-  const [data, setData] = useState<Character [] | []>([]); 
+  const [data, setData] = useState<Character [] | []>([]);
 
   const apiCall = async (url : string) => {
     try {
@@ -20,6 +20,7 @@ const useQuery = ( urls : string [] ) => {
 
   useEffect(() => {
     urls?.forEach(apiCall);
+    console.log("one time");
   }, []);
 
   return data;

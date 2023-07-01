@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import useQuery from "../hooks/useQuery";
 import CardsContainer from "../templates/CardsContainer";
 import { Character } from "../types/ApiContextTypes";
@@ -33,7 +34,7 @@ const LocationDisplay = ({location: {name, type, dimension, residents }} :  Loca
         </div>
         <h1 className="text-center font-bold text-2xl mt-5">Characters at the episode: </h1>
         <CardsContainer>
-          {charactersElements?.map(val => <Card character={val as Character}/>)}
+          {charactersElements?.map(val => <Card key={(val as Character).id} character={val as Character}/>)}
         </CardsContainer>
       </div>
     </div>

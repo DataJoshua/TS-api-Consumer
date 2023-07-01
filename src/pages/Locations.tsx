@@ -44,7 +44,7 @@ const Locations = () => {
             let valLowed = value.toLowerCase();
 
             return nameLowed.includes(valLowed);
-          }).map(val => <LocationCard location={val as Location} />)}
+          }).map(val => <LocationCard key={(val as Location).id} location={val as Location} />)}
         </CardsContainer>
         <Pagination info={info} page={page} handleOnNext={handleOnNext} handleOnPrev={handleOnPrev}/>
       </div>
