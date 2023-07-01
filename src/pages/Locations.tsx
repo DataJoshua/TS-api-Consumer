@@ -9,23 +9,23 @@ import SearchBox from "../molecules/SearchBox";
 const Locations = () => {
   
   useEffect(()=>{
-    setUrl("https://rickandmortyapi.com/api/location")
+    setUrl("https://rickandmortyapi.com/api/location");
   }, [])
 
   const inputValue = useRef<HTMLInputElement>(null)
   
   const { results, info, setUrl } = useContext(ApiContext) as ApiContextType;
   const [page, setPage] = useState<number>(1);
-  const [value, setValue] = useState<string>("")
+  const [value, setValue] = useState<string>("");
 
   const handleOnNext = () => {
     setUrl(info?.next);
-    setPage(prev => prev + 1)
+    setPage(prev => prev + 1);
   }
 
   const handleOnPrev = () => {
     setUrl(info?.prev)
-    setPage(prev => prev - 1)
+    setPage(prev => prev - 1);
   }
 
   const handleOnSearch = () => {
@@ -33,7 +33,6 @@ const Locations = () => {
     setValue(val);
   }
 
-  
   return (
     <>
       <div className="px-[60px]">
@@ -43,15 +42,14 @@ const Locations = () => {
             let loc = val as Location;
             let nameLowed = loc.name.toLowerCase();
             let valLowed = value.toLowerCase();
-            return nameLowed.includes(valLowed);
 
-          }).map(val => <LocationCard location={val as Location} />)}
+            return nameLowed.includes(valLowed);
+          }).map(val => <LocationCard key={(val as Location).id} location={val as Location} />)}
         </CardsContainer>
         <Pagination info={info} page={page} handleOnNext={handleOnNext} handleOnPrev={handleOnPrev}/>
       </div>
     </>
   );
 }
-
 
 export default Locations;

@@ -48,7 +48,7 @@ const Characters = () => {
             let query = value.toLocaleLowerCase();
 
             return name.includes(query);
-          }).map(val => <Card character={val as Character}/>)}
+          }).map(val => <Card key={(val as Character).id} character={val as Character}/>)}
         </CardsContainer>
         <Pagination page={page} info={info} handleOnNext={handleOnNext} handleOnPrev={handleOnPrev} />
       </div>
