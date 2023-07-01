@@ -5,6 +5,7 @@ import Nav from './templates/Nav';
 import Characters from './pages/Characters';
 import Locations from './pages/Locations';
 import Episodes from './pages/Episodes';
+import Home from './pages/Home';
 import EpisodePage from './pages/EpisodePage';
 import LocationPage from './pages/LocationPage';
 import CharacterPage from './pages/CharacterPage';
@@ -15,6 +16,7 @@ function App() {
         <Nav />
         <ApiContextProvider>
           <Routes>
+            <Route path="/" element={<Home/>}/>
             <Route path="/characters" element={<Characters/>}/>
             <Route path="/locations" element={<Locations/>}></Route>
             <Route path="/episodes" element={<Episodes/>}></Route>

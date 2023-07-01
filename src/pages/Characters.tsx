@@ -4,9 +4,7 @@ import ApiContext from "../context/ApiContext";
 import { ApiContextType, Character } from "../types/ApiContextTypes";
 import CardsContainer from "../templates/CardsContainer";
 import Card from "../organisms/Card";
-import PaginationButtonsContainer from "../templates/PaginationButtonsContainer";
 import Pagination from "../molecules/Pagination";
-import { log } from "console";
 import SearchBox from "../molecules/SearchBox";
 
 const Characters = () => {
@@ -47,7 +45,8 @@ const Characters = () => {
           {results?.filter(val  => {
             let character = val as Character;
             let name = character.name.toLowerCase();
-            let query = value.toLocaleLowerCase()
+            let query = value.toLocaleLowerCase();
+
             return name.includes(query);
           }).map(val => <Card key={(val as Character).id} character={val as Character}/>)}
         </CardsContainer>
